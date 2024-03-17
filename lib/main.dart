@@ -32,6 +32,10 @@ class _MyAppState extends State<MyApp> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.orange,
+                  ),
                   onPressed: () {
                     setState(() {
                       buttonName = 'Mantap cuy';
