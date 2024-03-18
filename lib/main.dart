@@ -56,7 +56,8 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 )
-              : const SizedBox(),
+              : Image.network(
+                  'https://www.agoda.com/wp-content/uploads/2024/02/Featured-image-Aurora-Borealis-in-Iceland.jpg'),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
