@@ -24,37 +24,39 @@ class _MyAppState extends State<MyApp> {
           title: const Text('App Title'),
         ),
         body: Center(
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.red,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.orange,
+          child: currentIndex == 0
+              ? Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Colors.red,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.black,
+                          backgroundColor: Colors.orange,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            buttonName = 'Mantap cuy';
+                          });
+                        },
+                        child: Text(buttonName),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            buttonName = 'Mantap cuy';
+                          });
+                        },
+                        child: Text(buttonName),
+                      ),
+                    ],
                   ),
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'Mantap cuy';
-                    });
-                  },
-                  child: Text(buttonName),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'Mantap cuy';
-                    });
-                  },
-                  child: Text(buttonName),
-                ),
-              ],
-            ),
-          ),
+                )
+              : const SizedBox(),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
