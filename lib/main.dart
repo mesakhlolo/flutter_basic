@@ -31,6 +31,7 @@ class MyAppExt extends StatefulWidget {
 class _MyAppExtState extends State<MyAppExt> {
   String buttonName = 'Click cuy';
   int currentIndex = 0;
+  bool _isClicked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +76,17 @@ class _MyAppExtState extends State<MyAppExt> {
                   ],
                 ),
               )
-            : Image.asset('images/spiderman.jpg'),
+            : GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isClicked = !_isClicked;
+                  });
+                },
+                child: _isClicked
+                    ? Image.asset('images/spiderman-compressed.jpg')
+                    : Image.network(
+                        'https://www.shutterstock.com/shutterstock/photos/1924127555/display_1500/stock-photo-summer-blue-sky-cloud-gradient-light-white-background-beauty-clear-cloudy-in-sunshine-calm-bright-1924127555.jpg'),
+              ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
